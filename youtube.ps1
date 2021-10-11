@@ -6,6 +6,6 @@ foreach($current in $videos.items)
     $vid=$current.snippet.resourceId.videoId
     Write-Host $current.snippet.title
     Write-Host $vid
-    & "cvlc"  https://youtube.com/watch?v=$vid --fullscreen
+    & "streamlink" --player="cvlc --fullscreen" $vid best
   }
 }
